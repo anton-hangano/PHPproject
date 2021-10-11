@@ -1,7 +1,7 @@
 
-<footer class="footer">
-    <div class="container">
-        <span class="text-muted">&copy; <?php  echo date('Y');  ?> Todos los derechos reservados.</span>
+<footer class="footer navbar fixed-bottom bg-secondary">
+    <div class="container py-3">
+        <span class=" position-absolute bottom-25 start-50 translate-middle-x text-white">&copy; <?php  echo date('Y');  ?> All rights reserved.</span>
     </div>
 </footer>
 

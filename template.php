@@ -4,7 +4,7 @@
 ?>
 
     <main class="container">
-        <h1>Tema de la página</h1>
+        <h1>Page theme</h1>
 
     </main>
 

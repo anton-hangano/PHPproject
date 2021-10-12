@@ -26,10 +26,10 @@ include 'includes/nav.php';
             while ($user = mysqli_fetch_assoc($users)) {
             ?>
                 <tr>
-                    <th><?= $user['idUser']; ?></th>
-                    <th><?= $user['userName']; ?></th>
-                    <th><?= $user['userLastName']; ?></th>
-                    <th><?= $user['userEmail']; ?></th>
+                    <td><?= $user['idUser']; ?></td>
+                    <td><?= $user['userName']; ?></td>
+                    <td><?= $user['userLastName']; ?></td>
+                    <td><?= $user['userEmail']; ?></td>
                     <td>
                         <a href="" class="btn btn-outline-secondary">Change</a>
                     </td>

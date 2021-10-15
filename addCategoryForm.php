@@ -5,8 +5,8 @@ include 'includes/nav.php';
 
 <main class="container">
     <h1>New category</h1>
-
-    <div class="alert bg-light p-4 col-7 mx-auto border">
+    <br>
+    <div class="alert bg-light p-4 col-7 mx-auto border shadow-sm">
         <form action="addCategory.php" method="post">
             <div class="form-group">
                 <label for="catName">Category name:</label>

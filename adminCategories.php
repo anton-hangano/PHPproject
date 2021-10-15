@@ -15,7 +15,7 @@
             <th>ID</th>
             <th>Category</th>
             <th colspan="2">
-                <a href="" class="btn btn-secondary">Add</a>
+                <a href="addCategoryForm.php" class="btn btn-secondary">Add</a>
             </th>
         </tr>
     </thead>

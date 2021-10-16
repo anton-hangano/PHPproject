@@ -29,7 +29,7 @@ include 'includes/nav.php';
             </div>
             <br>
             <button class="btn btn-dark">Add user</button>
-            <a href="adminCategories.php" class="btn btn-outline-secondary">Back to users</a>
+            <a href="adminUsers.php" class="btn btn-outline-secondary">Back to users</a>
         </form>
     </div>
 </main>

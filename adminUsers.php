@@ -17,7 +17,7 @@ include 'includes/nav.php';
                 <th>Last Name</th>
                 <th>Email</th>
                 <th colspan="2">
-                    <a href="" class="btn btn-secondary">Add</a>
+                    <a href="addUserForm.php" class="btn btn-secondary">Add</a>
                 </th>
             </tr>
         </thead>

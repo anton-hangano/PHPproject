@@ -7,7 +7,9 @@ function usersList(){
     userName, 
     userLastName, 
     userEmail
-    FROM users";
+    FROM users
+    -- WHERE userState = 1
+    ";
 
     $users = mysqli_query($link,$sql);
 

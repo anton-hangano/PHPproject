@@ -12,7 +12,8 @@ function usersList()
     WHERE userEstate = 1
     ";
 
-    $users = mysqli_query($link, $sql);
+    $users = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
 
     return $users;
 }
@@ -27,7 +28,8 @@ function addUser()
     $link = connect();
     $sql = "INSERT INTO
     users (userName, userLastName, userEmail, userPass, userEstate)
-    VALUE ('". $userName ."','".$userLastName."','".$userEmail."','".$userPass."',1)";
-    $addUser = mysqli_query($link, $sql);
+    VALUE ('" . $userName . "','" . $userLastName . "','" . $userEmail . "','" . $userPass . "',1)";
+    $addUser = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
     return $addUser;
 }

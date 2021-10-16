@@ -1,23 +1,26 @@
 <?php
 
-function categoriesList(){
+function categoriesList()
+{
     $link = connect();
     $sql = "SELECT 
     idCategory, 
     catName
     FROM categories";
 
-    $categories = mysqli_query($link,$sql);
-
+    $categories = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
     return $categories;
 }
 
-function addCategory(){
+function addCategory()
+{
     $catName = $_POST['catName'];
     $link = connect();
     $sql = "INSERT INTO
     categories (catName)
-    VALUE ('".$catName."')"; 
-    $addCat = mysqli_query($link, $sql);
+    VALUE ('" . $catName . "')";
+    $addCat = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
     return $addCat;
 }

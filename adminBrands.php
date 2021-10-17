@@ -15,7 +15,7 @@
             <th>ID</th>
             <th>Brand</th>
             <th colspan="2">
-                <a href="" class="btn btn-secondary">Add</a>
+                <a href="addBrandForm.php" class="btn btn-secondary">Add</a>
             </th>
         </tr>
     </thead>

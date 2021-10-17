@@ -9,3 +9,13 @@ function brandsList(){
 
     return $brands;
 }
+
+function addBrand(){
+    $bdName = $_POST['bdName'];
+    $link = connect();
+    $sql = "INSERT INTO 
+    brands(bdName)
+    VALUES ('".$bdName."')";
+    $addBrand = mysqli_query($link,$sql);
+    return $addBrand;
+}

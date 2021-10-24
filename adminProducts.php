@@ -19,7 +19,7 @@
             <th>Capacity</th>
             <th>Product Image</th>
             <th colspan="2">
-                <a href="" class="btn btn-secondary">Add</a>
+                <a href="addProductForm.php" class="btn btn-secondary">Add</a>
             </th>
         </tr>
     </thead>

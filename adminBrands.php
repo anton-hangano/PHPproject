@@ -27,7 +27,7 @@
             <td><?= $brand['idBrand']; ?></td>
             <td><?= $brand['bdName']; ?></td>
             <td>
-            <a href="" class="btn btn-outline-secondary">Change</a> 
+            <a href="changeBrandForm.php?idBrand=<?= $brand['idBrand']; ?>" class="btn btn-outline-secondary">Change</a> 
             </td>
             <td>
             <a href="" class="btn btn-outline-secondary">Delete</a> 

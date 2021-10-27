@@ -21,3 +21,16 @@ function addBrand()
         or die(mysqli_error($link));
     return $addBrand;
 }
+function showBrand()
+{
+    $idBrand = $_GET['idBrand'];
+    $link = connect();
+    $sql = "SELECT idBrand, bdName
+    FROM brands
+    WHERE idBrand = " . $idBrand;
+    $showBrandObj = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+    $showBrand = mysqli_fetch_assoc($showBrandObj);
+
+    return $showBrand;
+}

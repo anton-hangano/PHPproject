@@ -16,6 +16,7 @@ include 'includes/nav.php';
                 <br>
                 <input type="text" name="bdName" class="form-control" id="bdName" value="<?=$showBr['bdName']?>" required>
             </div>
+            <input type="hidden" name="idBrand" value="<?=$showBr['idBrand']?>">   
             <br>
             <button class="btn btn-dark">Update Brand</button>
             <a href="adminBrands.php" class="btn btn-outline-secondary">Back to brands</a>

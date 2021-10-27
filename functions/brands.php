@@ -34,3 +34,15 @@ function showBrand()
 
     return $showBrand;
 }
+function updateBrand()
+{
+    $idBrand = $_POST['idBrand'];
+    $bdName = $_POST['bdName'];
+    $link = connect();
+    $sql = "UPDATE
+    brands SET bdName='".$bdName."'
+    WHERE idBrand=".$idBrand;
+    $updateBrand = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+    return $updateBrand;
+}

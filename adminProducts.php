@@ -35,7 +35,7 @@
             <td><?= $product['prdPresentation']; ?></td>
             <td> <img src="products/<?= $product['prdImage']?>" class="img-thumbnail"></td>
             <td>
-            <a href="" class="btn btn-outline-secondary">Change</a> 
+            <a href="changeProductForm.php?idProduct=<?= $product['idProduct']?>" class="btn btn-outline-secondary">Change</a> 
             </td>
             <td>
             <a href="" class="btn btn-outline-secondary">Delete</a> 

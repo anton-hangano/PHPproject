@@ -7,7 +7,9 @@ function productsList()
         p.idProduct,
         p.prdName,
         p.prdPrice,
+        p.idBrand,
         b.bdName,
+        p.idCategory,
         c.catName,
         p.prdPresentation,
         p.prdImage
@@ -59,4 +61,28 @@ function addProduct()
     $addProduct = mysqli_query($link, $sql)
         or die(mysqli_error($link));
     return $addProduct;
+}
+
+function showProduct()
+{
+    $idProduct = $_GET['idProduct'];
+    $link = connect();
+    $sql = "SELECT 
+        p.idProduct,
+        p.prdName,
+        p.prdPrice,
+        b.bdName,
+        c.catName,
+        p.prdPresentation,
+        p.prdStock,
+        p.prdImage
+        FROM products p
+        INNER JOIN brands b ON p.idBrand = b.idBrand
+        INNER JOIN categories c ON p.idCategory = c.idCategory
+        WHERE p.idProduct = " . $idProduct;
+    $showProductObj = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+    $showProduct = mysqli_fetch_assoc($showProductObj);
+
+    return $showProduct;
 }

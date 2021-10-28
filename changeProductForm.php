@@ -44,12 +44,12 @@ include 'includes/nav.php';
             <br>
             <div class="form-group">
                 <label for="userPass">Category</label><br>
-                <select name="idCategory" id="idCategory" class="form-control">
-                    <option value="<?= $showPr['idCategory']?>"><?= $showPr['catName']?></option>
+                <select name="idCategory" id="idCategory" class="form-control" required>
+                    <option value="">Select Category</option>
                     <?php
                     while($category = mysqli_fetch_assoc($categories)){
                     ?>
-                    <option value="<?=$category['idCategory']?>"><?=$category['catName']?></option>
+                    <option <?= ($showPr['idCategory']==$category['idCategory'])? 'selected':'';?> value="<?=$category['idCategory']?>"><?=$category['catName']?></option>
                     <?php
                     }
                     ?>

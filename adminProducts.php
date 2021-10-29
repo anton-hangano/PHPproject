@@ -38,7 +38,7 @@
             <a href="changeProductForm.php?idProduct=<?= $product['idProduct']?>" class="btn btn-outline-secondary">Change</a> 
             </td>
             <td>
-            <a href="" class="btn btn-outline-secondary">Delete</a> 
+            <a href="deleteProductForm.php?idProduct=<?= $product['idProduct']?>" class="btn btn-outline-secondary">Delete</a> 
             </td>
         </tr>
         <?php

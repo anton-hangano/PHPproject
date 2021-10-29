@@ -31,7 +31,7 @@ include 'includes/nav.php';
                     <td><?= $user['userLastName']; ?></td>
                     <td><?= $user['userEmail']; ?></td>
                     <td>
-                        <a href="" class="btn btn-outline-secondary">Change</a>
+                        <a href="changeUserForm.php?idUser=<?=$user['idUser'];?>" class="btn btn-outline-secondary">Change</a>
                     </td>
                     <td>
                         <a href="" class="btn btn-outline-secondary">Delete</a>

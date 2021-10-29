@@ -33,3 +33,21 @@ function addUser()
         or die(mysqli_error($link));
     return $addUser;
 }
+function showUser(){
+    $idUser = $_GET['idUser'];
+    $link = connect();
+    $sql="SELECT 
+    idUser, 
+    userName, 
+    userLastName, 
+    userEmail,
+    userPass
+    FROM users
+    WHERE userEstate = 1
+    AND idUser=".$idUser;
+    $showUserObj = mysqli_query($link,$sql)
+    or die(mysqli_error($link));
+    $showUser= mysqli_fetch_assoc($showUserObj);
+    return $showUser;
+
+}

@@ -72,6 +72,7 @@ include 'includes/nav.php';
                 <img src="products/<?= $showPr['prdImage']?>" alt="">
             </div>
             <input type="hidden" name="idProduct" value="<?= $showPr['idProduct']?>">
+            <input type="hidden" name="imgOrig" value="<?= $showPr['prdImage']?>">
             <br>
             <button class="btn btn-dark">Update product</button>
             <a href="adminProducts.php" class="btn btn-outline-secondary">Back to products</a>

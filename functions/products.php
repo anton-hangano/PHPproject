@@ -25,10 +25,14 @@ function uploadImage()
 {
     $prdImage = 'notAvailable.jpg';
 
-    if ($_FILES['prdImage']['error'] = 0) {
+    if(isset($_POST['imgOrig'])){
+        $prdImage = $_POST['imgOrig'];
+    }
+
+    if ($_FILES['prdImage']['error'] == 0) {
         $tmp = $_FILES['prdImage']['tmp_name'];
-        $prdImage = $_FILES['prdImage']['name'];
         $path = 'products/';
+        $prdImage = $_FILES['prdImage']['name'];
         $folder = $path . $prdImage;
         move_uploaded_file($tmp, $folder);
     }

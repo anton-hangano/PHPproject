@@ -33,10 +33,11 @@ function addUser()
         or die(mysqli_error($link));
     return $addUser;
 }
-function showUser(){
+function showUser()
+{
     $idUser = $_GET['idUser'];
     $link = connect();
-    $sql="SELECT 
+    $sql = "SELECT 
     idUser, 
     userName, 
     userLastName, 
@@ -44,10 +45,30 @@ function showUser(){
     userPass
     FROM users
     WHERE userEstate = 1
-    AND idUser=".$idUser;
-    $showUserObj = mysqli_query($link,$sql)
-    or die(mysqli_error($link));
-    $showUser= mysqli_fetch_assoc($showUserObj);
+    AND idUser=" . $idUser;
+    $showUserObj = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+    $showUser = mysqli_fetch_assoc($showUserObj);
     return $showUser;
-
+}
+function updateUser()
+{
+    $idUser = $_POST['idUser'];
+    $userName = $_POST['userName'];
+    $userLastName = $_POST['userLastName'];
+    $userEmail = $_POST['userEmail'];
+    $userPass = $_POST['userPass'];
+    $link = connect();
+    $sql = "UPDATE
+    users
+    SET
+    userName='" . $userName . "',
+    userLastName='" . $userLastName . "',
+    userEmail='" . $userEmail . "',
+    userPass='" . $userPass . "'
+    WHERE
+    idUser=" . $idUser;
+    $updateUser = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+    return $updateUser;
 }

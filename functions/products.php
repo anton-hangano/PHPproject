@@ -117,3 +117,13 @@ function updateProduct(){
     or die(mysqli_error($link));
     return $updateProduct;
 }
+function deleteProduct() {
+    $idProduct = $_POST['idProduct'];
+    $link = connect();
+    $sql = "DELETE FROM
+        products
+        WHERE idProduct = " . $idProduct;
+        $deleteProduct= mysqli_query($link,$sql)
+        or die(mysqli_error($link));
+        return $deleteProduct;
+}

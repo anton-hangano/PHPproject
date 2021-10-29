@@ -88,3 +88,28 @@ function showProduct()
 
     return $showProduct;
 }
+function updateProduct(){
+    $idProduct = $_POST['idProduct'];
+    $prdName = $_POST['prdName'];
+    $prdPrice = $_POST['prdPrice'];
+    $idBrand = $_POST['idBrand'];
+    $idCategory = $_POST['idCategory'];
+    $prdPresentation = $_POST['prdPresentation'];
+    $prdStock = $_POST['prdStock'];
+    $prdImage = uploadImage();
+    $link = connect();
+    $sql="UPDATE
+    products
+    SET
+    prdName='".$prdName."',
+    prdPrice=".$prdPrice.",
+    idBrand=".$idBrand.",
+    idCategory=".$idCategory.",
+    prdPresentation='".$prdPresentation."',
+    prdStock=".$prdStock.",
+    prdImage='".$prdImage."'
+    WHERE idProduct=".$idProduct;
+    $updateProduct= mysqli_query($link,$sql)
+    or die(mysqli_error($link));
+    return $updateProduct;
+}

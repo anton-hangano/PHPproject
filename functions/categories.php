@@ -24,3 +24,16 @@ function addCategory()
         or die(mysqli_error($link));
     return $addCat;
 }
+function showCategories(){
+    $idCategory = $_GET['idCategory'];
+    $link = connect();
+    $sql = "SELECT 
+    idCategory, 
+    catName
+    FROM categories
+    WHERE idCategory=".$idCategory;
+    $showCategoriesObj = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+        $showCategories = mysqli_fetch_assoc($showCategoriesObj);
+    return $showCategories;
+}

@@ -27,7 +27,7 @@
             <td><?= $category['idCategory']; ?></td>
             <td><?= $category['catName']; ?></td>
             <td>
-            <a href="" class="btn btn-outline-secondary">Change</a> 
+            <a href="changeCategoryForm.php?idCategory=<?= $category['idCategory']; ?>" class="btn btn-outline-secondary">Change</a> 
             </td>
             <td>
             <a href="" class="btn btn-outline-secondary">Delete</a> 

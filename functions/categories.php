@@ -37,3 +37,15 @@ function showCategories(){
         $showCategories = mysqli_fetch_assoc($showCategoriesObj);
     return $showCategories;
 }
+function updateCategory(){
+    $idCategory = $_POST['idCategory'];
+    $catName = $_POST['catName'];
+    $link = connect();
+    $sql = "UPDATE
+    categories
+    SET catName='".$catName."'
+    WHERE idCategory= ".$idCategory;
+    $updateCategory = mysqli_query($link, $sql)
+    or die(mysqli_error($link));
+    return $updateCategory;
+}

@@ -10,7 +10,7 @@ include 'includes/nav.php';
     <h1>Update category</h1>
     <br>
     <div class="alert bg-light p-4 col-7 mx-auto border shadow-sm">
-        <form action="addCategory.php" method="post">
+        <form action="changeCategory.php" method="post">
             <div class="form-group">
                 <label for="catName">Category name:</label>
                 <input type="text" name="catName" class="form-control" id="catName" value="<?= $showCat['catName']?>" required>

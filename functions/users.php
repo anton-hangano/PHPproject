@@ -72,3 +72,13 @@ function updateUser()
         or die(mysqli_error($link));
     return $updateUser;
 }
+function deleteUser(){
+    $idUser = $_POST['idUser'];
+    $link = connect();
+    $sql = "DELETE FROM
+    users
+    WHERE idUser=".$idUser;
+    $deleteUser = mysqli_query($link, $sql)
+    or die (mysqli_error($link));
+    return $deleteUser;
+}

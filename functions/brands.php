@@ -46,3 +46,14 @@ function updateBrand()
         or die(mysqli_error($link));
     return $updateBrand;
 }
+function deleteBrand(){
+    $idBrand = $_POST['idBrand'];
+    $link = connect();
+    $sql = "DELETE FROM
+    brands
+    WHERE idBrand = " . $idBrand;
+    $deleteBrand = mysqli_query($link, $sql)
+        or die(mysqli_error($link));
+
+    return $deleteBrand;
+}

@@ -30,7 +30,7 @@
             <a href="changeBrandForm.php?idBrand=<?= $brand['idBrand']; ?>" class="btn btn-outline-secondary">Change</a> 
             </td>
             <td>
-            <a href="" class="btn btn-outline-secondary">Delete</a> 
+            <a href="deleteBrandForm.php?idBrand=<?= $brand['idBrand']; ?>" class="btn btn-outline-secondary">Delete</a> 
             </td>
         </tr>
         <?php

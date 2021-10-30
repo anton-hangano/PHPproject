@@ -25,7 +25,7 @@ include 'includes/nav.php';
                     <input type="hidden" name="idProduct" value="<?= $showPr['idProduct'] ?>">
 
                     <button class="btn btn-danger btn-block my-4">Confirm</button>
-                    <button class="btn btn-secondary btn-block my-4">Back to products</button>
+                    <a href="adminProducts.php" class="btn btn-outline-secondary">Back to products</a>
 
                 </form>
             </div>

@@ -1,4 +1,7 @@
 <?php
+require 'config/config.php';
+require 'functions/auth.php';
+auth();
 require 'functions/connection.php';
 require 'functions/users.php';
 $deleteUsr = deleteUser();

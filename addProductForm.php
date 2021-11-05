@@ -1,4 +1,7 @@
 <?php
+require 'config/config.php';
+require 'functions/auth.php';
+auth();
 require 'functions/connection.php';
 require 'functions/brands.php';
 require 'functions/categories.php';
@@ -31,9 +34,9 @@ include 'includes/nav.php';
                 <select name="idBrand" id="idBrand" class="form-control">
                     <option value="">Select brand</option>
                     <?php
-                    foreach($brands as $brand){
+                    foreach ($brands as $brand) {
                     ?>
-                    <option value="<?=$brand['idBrand']?>"><?=$brand['bdName']?></option>
+                        <option value="<?= $brand['idBrand'] ?>"><?= $brand['bdName'] ?></option>
                     <?php
                     }
                     ?>
@@ -45,9 +48,9 @@ include 'includes/nav.php';
                 <select name="idCategory" id="idCategory" class="form-control">
                     <option value="">Select category</option>
                     <?php
-                    while($category = mysqli_fetch_assoc($categories)){
+                    while ($category = mysqli_fetch_assoc($categories)) {
                     ?>
-                    <option value="<?=$category['idCategory']?>"><?=$category['catName']?></option>
+                        <option value="<?= $category['idCategory'] ?>"><?= $category['catName'] ?></option>
                     <?php
                     }
                     ?>
@@ -72,11 +75,11 @@ include 'includes/nav.php';
             <br>
             <button class="btn btn-dark">Add product</button>
             <a href="adminProducts.php" class="btn btn-outline-secondary">Back to products</a>
-            
+
         </form>
-        
+
     </div>
-    <?='<br>'?>
+    <?= '<br>' ?>
 </main>
 
 <?php include 'includes/footer.php';  ?>

@@ -1,4 +1,7 @@
 <?php
+require 'config/config.php';
+require 'functions/auth.php';
+auth();
 require 'functions/connection.php';
 require 'functions/brands.php';
 $showBr = showBrand();
@@ -14,9 +17,9 @@ include 'includes/nav.php';
             <div class="form-group">
                 <label for="bdName">Brand name:</label>
                 <br>
-                <input type="text" name="bdName" class="form-control" id="bdName" value="<?=$showBr['bdName']?>" required>
+                <input type="text" name="bdName" class="form-control" id="bdName" value="<?= $showBr['bdName'] ?>" required>
             </div>
-            <input type="hidden" name="idBrand" value="<?=$showBr['idBrand']?>">   
+            <input type="hidden" name="idBrand" value="<?= $showBr['idBrand'] ?>">
             <br>
             <button class="btn btn-dark">Update Brand</button>
             <a href="adminBrands.php" class="btn btn-outline-secondary">Back to brands</a>

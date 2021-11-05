@@ -1,4 +1,7 @@
 <?php
+require 'config/config.php';
+require 'functions/auth.php';
+auth();
 require 'functions/connection.php';
 require 'functions/brands.php';
 require 'functions/categories.php';
@@ -17,7 +20,7 @@ include 'includes/nav.php';
         <form action="changeProduct.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="prdName">Product name</label>
-                <input type="text" name="prdName" class="form-control" id="prdName" value="<?= $showPr['prdName']?>" required>
+                <input type="text" name="prdName" class="form-control" id="prdName" value="<?= $showPr['prdName'] ?>" required>
             </div>
             <br>
             <label for="prdPrice">Product price</label>
@@ -25,17 +28,17 @@ include 'includes/nav.php';
                 <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
                 </div>
-                <input type="number" name="prdPrice" class="form-control" id="prdPrice" min="0" value="<?= $showPr['prdPrice']?>" required>
+                <input type="number" name="prdPrice" class="form-control" id="prdPrice" min="0" value="<?= $showPr['prdPrice'] ?>" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="idBrand">Brand</label><br>
                 <select name="idBrand" id="idBrand" class="form-control">
-                    <option value="<?= $showPr['idBrand']?>"><?= $showPr['bdName']?></option>
+                    <option value="<?= $showPr['idBrand'] ?>"><?= $showPr['bdName'] ?></option>
                     <?php
-                    foreach($brands as $brand){
+                    foreach ($brands as $brand) {
                     ?>
-                    <option value="<?=$brand['idBrand']?>"><?=$brand['bdName']?></option>
+                        <option value="<?= $brand['idBrand'] ?>"><?= $brand['bdName'] ?></option>
                     <?php
                     }
                     ?>
@@ -47,9 +50,9 @@ include 'includes/nav.php';
                 <select name="idCategory" id="idCategory" class="form-control" required>
                     <option value="">Select Category</option>
                     <?php
-                    while($category = mysqli_fetch_assoc($categories)){
+                    while ($category = mysqli_fetch_assoc($categories)) {
                     ?>
-                    <option <?= ($showPr['idCategory']==$category['idCategory'])? 'selected':'';?> value="<?=$category['idCategory']?>"><?=$category['catName']?></option>
+                        <option <?= ($showPr['idCategory'] == $category['idCategory']) ? 'selected' : ''; ?> value="<?= $category['idCategory'] ?>"><?= $category['catName'] ?></option>
                     <?php
                     }
                     ?>
@@ -58,29 +61,29 @@ include 'includes/nav.php';
             <br>
             <div class="form-group">
                 <label for="prdPresentation">Product Presentation</label>
-                <textarea name="prdPresentation" id="prdPresentation" class="form-control" required><?=$showPr['prdPresentation']?></textarea>
+                <textarea name="prdPresentation" id="prdPresentation" class="form-control" required><?= $showPr['prdPresentation'] ?></textarea>
             </div>
             <br>
             <div class="form-group">
                 <label for="prdStock">Product Stock</label>
-                <input type="number" name="prdStock" class="form-control" min="0" id="prdStock" value="<?= $showPr['prdStock']?>" required>
+                <input type="number" name="prdStock" class="form-control" min="0" id="prdStock" value="<?= $showPr['prdStock'] ?>" required>
             </div>
             <br>
             <div class="form-group">
                 <label for="prdImage">Product Image</label><br>
                 <input type="file" name="prdImage" class="form-control-file" id="prdImage"><br>
-                <img src="products/<?= $showPr['prdImage']?>" alt="">
+                <img src="products/<?= $showPr['prdImage'] ?>" alt="">
             </div>
-            <input type="hidden" name="idProduct" value="<?= $showPr['idProduct']?>">
-            <input type="hidden" name="imgOrig" value="<?= $showPr['prdImage']?>">
+            <input type="hidden" name="idProduct" value="<?= $showPr['idProduct'] ?>">
+            <input type="hidden" name="imgOrig" value="<?= $showPr['prdImage'] ?>">
             <br>
             <button class="btn btn-dark">Update product</button>
             <a href="adminProducts.php" class="btn btn-outline-secondary">Back to products</a>
-            
+
         </form>
-        
+
     </div>
-    <?='<br>'?>
+    <?= '<br>' ?>
 </main>
 
 <?php include 'includes/footer.php';  ?>

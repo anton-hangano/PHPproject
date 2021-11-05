@@ -1,4 +1,7 @@
 <?php
+require 'config/config.php';
+require 'functions/auth.php';
+auth();
 require 'functions/connection.php';
 require 'functions/categories.php';
 $showCat = showCategories();
@@ -13,9 +16,9 @@ include 'includes/nav.php';
         <form action="changeCategory.php" method="post">
             <div class="form-group">
                 <label for="catName">Category name:</label>
-                <input type="text" name="catName" class="form-control" id="catName" value="<?= $showCat['catName']?>" required>
+                <input type="text" name="catName" class="form-control" id="catName" value="<?= $showCat['catName'] ?>" required>
 
-                <input type="hidden" name="idCategory" value="<?= $showCat['idCategory']?>">
+                <input type="hidden" name="idCategory" value="<?= $showCat['idCategory'] ?>">
             </div>
             <br>
             <button class="btn btn-dark">Update Category</button>

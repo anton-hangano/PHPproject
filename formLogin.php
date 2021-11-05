@@ -1,4 +1,5 @@
 <?php
+require 'config/config.php';
 include 'includes/header.html';
 include 'includes/nav.php';
 ?>
@@ -19,9 +20,14 @@ include 'includes/nav.php';
     </div>
     <?php
         if(isset( $_GET['error'])){
+            if($_GET['error'] == 1){
+                $message = 'User / Password incorrect';
+            }else if($_GET['error'] == 2){
+                $message = 'Need to log in first';
+            }      
     ?>
     <div class="alert alert-danger mt-3 p-4 col-7 mx-auto border shadow-sm">
-        User / Password incorrect
+        <?=$message?>
     </div>
 
     <?php

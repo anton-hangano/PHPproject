@@ -1,4 +1,5 @@
 <?php
+    require 'config/config.php';
     require 'functions/connection.php';
     require 'functions/products.php';
     $showPr = productsList();

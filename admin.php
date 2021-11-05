@@ -1,4 +1,7 @@
 <?php
+    require 'config/config.php';
+    require 'functions/auth.php';
+    auth();
 	include 'includes/header.html';
 	include 'includes/nav.php';  
 ?>

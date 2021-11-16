@@ -19,8 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ComercioIT`
 --
-CREATE DATABASE IF NOT EXISTS `catalogo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `catalogo`;
+
 -- --------------------------------------------------------
 
 --
